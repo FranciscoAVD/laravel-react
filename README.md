@@ -3,15 +3,15 @@
 
 ## Scripts for project set up
 
-1. `composer create-project laravel/laravel <project_name>`
+1. `composer create-project laravel/laravel <PROJECT_NAME>`
 2. `composer require laravel/breeze --dev`
 3. `php artisan breeze:install`
 4. `npm install`
 
 ## Local Development
 Be sure to run both simultaneously
-- php artisan serve
-- npm run dev
+- `php artisan serve`
+- `npm run dev`
 
 ## Database
 ### Script for creating schemas and factories

@@ -8,6 +8,11 @@
 3. `php artisan breeze:install`
 4. `npm install`
 
+## Local Development
+Be sure to run both simultaneously
+- php artisan serve
+- npm run dev
+
 ## Database
 ### Script for creating schemas and factories
 <!--The files created live under database/factories and database/migrations-->

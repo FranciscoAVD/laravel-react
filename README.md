@@ -1,5 +1,5 @@
 # Workin with Laravel and Inertia
-<!--Project follows tutorial video from https://youtu.be/VrQRa-afCAk?si=omlQR_SMD_yt4zg9-->
+Project follows tutorial video from https://youtu.be/VrQRa-afCAk?si=omlQR_SMD_yt4zg9
 
 ## Scripts for project set up
 
@@ -24,23 +24,26 @@ Be sure to run both simultaneously
 4. Write population commands with the necessary models in ./database/seeders/DatabaseSeeder.php
 
 ### Script for migrations
-- php artisan migrate:refresh --seed <!--:refresh is to drop all existing tables-->
+- `php artisan migrate:refresh --seed` <!--:refresh is to drop all existing tables-->
 To verify your migration was successfull, run 
 - `php artisan tinker`
 - `\App\Models\<MODEL_NAME>::count()` <!--Should equal to the amount created in -->
 
 ## Controllers
-For creating controllers use `php artisan make:controller <CONTROLLER_NAME> --model=<MODEL> --resource --request`
+For creating controllers use `php artisan make:controller <CONTROLLER_NAME> --model=<MODEL> --resource --request`. This will create 3 files. The first under ./app/Http/Controllers and the other two under ./app/Http/Requests
 
 ## Auth
 ### Email verification
 
-Add
+Change User model to include
 ```php 
-extends Authenticatable implements MustVerifyEmail
+class User extends Authenticatable implements MustVerifyEmail{
+    ...
+}
 ``` 
 from 
 ```php
-Illuminate\Contracts\Auth\MustVerifyEmail
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\MustVerifyEmail
 ```
-to the User class. It should be commented out by default.
+It should be commented out by default.

@@ -33,11 +33,29 @@ The files created live under ./database/factories and ./database/migrations
 ## Controllers
 For creating controllers use:
  `php artisan make:controller <CONTROLLER_NAME> --model=<MODEL_NAME> --requests --resource`.
+ `
  ### Flags
  #### --requests
  The `--requests` flag will create two files for the purpose of validating whether a user is authorized to update or create an entity. These files live under ./app/Http/Requests
  #### --resource
  This will create all the crud methods inside the controller (index,create,store,show,edit,update,destroy)
+
+## Routes
+To create different routes for the CRUD operations in the respective controller, use `Route::resource()`.
+```php
+Route::resource('ROUTE_NAME', CONTROLLER_NAME::class);
+```
+This will create the following routes:
+```
+GET|HEAD <ROUTE_NAME>
+POST <ROUTE_NAME>
+GET|HEAD <ROUTE_NAME>/create
+GET|HEAD <ROUTE_NAME>/{<ROUTE_NAME>}
+PUT|PATCH <ROUTE_NAME>/{<ROUTE_NAME>}
+DELTE <ROUTE_NAME>/{<ROUTE_NAME>}
+GET|HEAD <ROUTE_NAME>/{<ROUTE_NAME>}/edit
+```
+This can be verified by running `php artisan route:list`
 
 ## Auth
 ### Email verification

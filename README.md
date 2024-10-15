@@ -15,8 +15,8 @@ Be sure to run both simultaneously
 
 ## Database
 ### Script for creating schemas and factories
-<!--The files created live under database/factories and database/migrations-->
-- `php artisan make:model <MODEL_NAME> -fm` <!--FLAGS: f FACTORY, m MIGRATE-->
+The files created live under ./database/factories and ./database/migrations
+- `php artisan make:model <MODEL_NAME> -fm` FLAGS: f FACTORY, m MIGRATE
 ### Important steps
 1. Define your schema for each table created under ./database/migrations
 2. Pass the columns to the respective factory in ./database/factories to be able to generate fake data
@@ -24,10 +24,11 @@ Be sure to run both simultaneously
 4. Write population commands with the necessary models in ./database/seeders/DatabaseSeeder.php
 
 ### Script for migrations
-- `php artisan migrate:refresh --seed` <!--:refresh is to drop all existing tables-->
-To verify your migration was successfull, run 
+- `php artisan migrate:refresh --seed` (refresh is to drop all existing tables)
+
+#### To verify your migration was successfull, run:
 - `php artisan tinker`
-- `\App\Models\<MODEL_NAME>::count()` <!--Should equal to the amount created in -->
+- `\App\Models\<MODEL_NAME>::count()` (Should equal to the amount created in your seeder file)
 
 ## Controllers
 For creating controllers use `php artisan make:controller <CONTROLLER_NAME> --model=<MODEL> --resource --request`. This will create 3 files. The first under ./app/Http/Controllers and the other two under ./app/Http/Requests

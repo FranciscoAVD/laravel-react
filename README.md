@@ -32,7 +32,7 @@ The files created live under ./database/factories and ./database/migrations
 
 ## Controllers
 For creating controllers use:
- `php artisan make:controller <CONTROLLER_NAME> --model=<MODEL> --requests --resource`.
+ `php artisan make:controller <CONTROLLER_NAME> --model=<MODEL_NAME> --requests --resource`.
  ### Flags
  #### --requests
  The `--requests` flag will create two files for the purpose of validating whether a user is authorized to update or create an entity. These files live under ./app/Http/Requests

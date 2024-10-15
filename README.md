@@ -1,4 +1,4 @@
-# Workin with Laravel and Inertia
+# Laravel and Inertia
 Project follows tutorial video from https://youtu.be/VrQRa-afCAk?si=omlQR_SMD_yt4zg9
 
 ## Scripts for project set up

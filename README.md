@@ -31,7 +31,13 @@ The files created live under ./database/factories and ./database/migrations
 - `\App\Models\<MODEL_NAME>::count()` (Should equal to the amount created in your seeder file)
 
 ## Controllers
-For creating controllers use `php artisan make:controller <CONTROLLER_NAME> --model=<MODEL> --resource --request`. This will create 3 files. The first under ./app/Http/Controllers and the other two under ./app/Http/Requests
+For creating controllers use:
+ `php artisan make:controller <CONTROLLER_NAME> --model=<MODEL> --requests --resource`.
+ ### Flags
+ #### --requests
+ The `--requests` flag will create two files for the purpose of validating whether a user is authorized to update or create an entity. These files live under ./app/Http/Requests
+ #### --resource
+ This will create all the crud methods inside the controller (index,create,store,show,edit,update,destroy)
 
 ## Auth
 ### Email verification
